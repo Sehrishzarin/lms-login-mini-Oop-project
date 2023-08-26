@@ -69,6 +69,14 @@ public:
 			}
 		}
 	}
+	void Deleteuser(string username) {
+		for (int i = 0; i < users.size(); i++) {
+			if (users[i].getUsername() == username) {
+				users.erase(users.begin() + i);
+				cout << "\t\t user Removed successfully" << endl;
+			}
+		}
+	}
 };
 
 int main() {
@@ -108,7 +116,17 @@ int main() {
 			Um.SearchUser(username);
 			break;
 		}
+		case 5: {
+			string username;
+			cout << "\t\t Enter Username: " << endl;
+			cin >> username;
+			Um.Deleteuser(username);
+			break; }
+		case 6: {
+			exit(1);
 		}
+		}
+
 
 		cout << "\t\t Do you want to continue? [Y/N]";
 		cin >> choice;
